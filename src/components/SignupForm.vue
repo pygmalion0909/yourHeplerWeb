@@ -38,10 +38,14 @@ export default {
 				nickName: this.nickName,
 			};
 
-			let singupResult = await signupMember(memberDate);
-
-			//result
-			console.log('회원가입결과>>', singupResult);
+			const singupResult = await signupMember(memberDate);
+			console.log('회원가입결과>>', singupResult.data);
+			this.initForm();
+		},
+		initForm() {
+			this.loginId = '';
+			this.password = '';
+			this.nickName = '';
 		},
 	},
 };
